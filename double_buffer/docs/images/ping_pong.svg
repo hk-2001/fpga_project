@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1080" viewBox="0 0 1600 1080" font-family="Microsoft YaHei, SimHei, sans-serif">
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#4b5563"/>
+    </marker>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="1080" fill="#ffffff"/>
+
+  <text x="800" y="48" text-anchor="middle" font-size="26" font-weight="bold" fill="#1f2937">双缓冲乒乓 · Ping-Pong</text>
+  <text x="800" y="76" text-anchor="middle" font-size="13" fill="#6b7280">DDR3 开 A / B 两块帧缓存，写完一帧立即翻块，读侧错开启动（fifo_to_adapter.v · ui_clk 100MHz）</text>
+
+  <!-- 采集域 -->
+  <g>
+    <rect x="40" y="110" width="320" height="170" rx="10" fill="#fdf4e9" stroke="#e3b077" stroke-width="1.5"/>
+    <text x="56" y="136" font-size="14" font-weight="bold" fill="#a9601a">OV5640 采集域 · cam1_pclk 84MHz</text>
+    <text x="56" y="164" font-size="12" fill="#374151">· ov5640_data：8bit 两两拼 16bit RGB565</text>
+    <text x="56" y="186" font-size="12" fill="#374151">· wr_ddr3_fifo：16→128bit，84→100MHz</text>
+    <text x="56" y="208" font-size="12" fill="#374151">· wr_en 随像素给出</text>
+    <text x="56" y="230" font-size="12" fill="#374151">· camera_done 每写完一帧给一拍脉冲</text>
+    <text x="56" y="258" font-size="11" fill="#8a6d1a">源：OV5640 DVP 输出，异步</text>
+  </g>
+
+  <!-- 写主机 -->
+  <g>
+    <rect x="430" y="110" width="380" height="170" rx="10" fill="#eef5fc" stroke="#86aede" stroke-width="1.5"/>
+    <text x="446" y="136" font-size="14" font-weight="bold" fill="#2b5f9b">AXI4 写主机 · fifo_to_axi4</text>
+    <text x="446" y="164" font-size="12" fill="#374151">· 从写 FIFO 取 128bit，打包写突发</text>
+    <text x="446" y="186" font-size="12" fill="#374151">· AWLEN=31，512B/突发，一帧 3600 个</text>
+    <text x="446" y="208" font-size="12" fill="#374151">· 基址 wr_base = w_buf ? 缓冲B : 缓冲A</text>
+    <text x="446" y="230" font-size="12" fill="#374151">· w_addr_switch_pulse 拍一拍装载新基址</text>
+  </g>
+
+  <!-- DDR3 -->
+  <g>
+    <rect x="890" y="110" width="670" height="300" rx="10" fill="#eef7f0" stroke="#8fc49a" stroke-width="1.5"/>
+    <text x="906" y="136" font-size="14" font-weight="bold" fill="#2f7a3f">DDR3 帧缓存 · 双缓冲 A / B（每块 1,843,200 B）</text>
+
+    <rect x="920" y="156" width="290" height="126" rx="8" fill="#ffffff" stroke="#8fc49a" stroke-width="1.2"/>
+    <text x="1065" y="182" text-anchor="middle" font-size="14" font-weight="bold" fill="#2f7a3f">缓冲 A</text>
+    <text x="1065" y="206" text-anchor="middle" font-size="12" fill="#374151">0x0100_0000</text>
+    <text x="1065" y="230" text-anchor="middle" font-size="11" fill="#6b7280">1280 × 720 × 2 = 1,843,200 B</text>
+    <text x="1065" y="262" text-anchor="middle" font-size="11" fill="#6b7280">w_buf=0 时写，r_buf=0 时读</text>
+
+    <rect x="1240" y="156" width="290" height="126" rx="8" fill="#ffffff" stroke="#8fc49a" stroke-width="1.2"/>
+    <text x="1385" y="182" text-anchor="middle" font-size="14" font-weight="bold" fill="#2f7a3f">缓冲 B</text>
+    <text x="1385" y="206" text-anchor="middle" font-size="12" fill="#374151">0x0120_0000</text>
+    <text x="1385" y="230" text-anchor="middle" font-size="11" fill="#6b7280">1280 × 720 × 2 = 1,843,200 B</text>
+    <text x="1385" y="262" text-anchor="middle" font-size="11" fill="#6b7280">w_buf=1 时写，r_buf=1 时读</text>
+
+    <text x="906" y="316" font-size="12" fill="#374151">同一时刻：写者写 w_buf 指向的块，读者读 r_buf 指向的块，两块角色每帧互换。</text>
+    <text x="906" y="342" font-size="12" fill="#374151">写 A 读 B → 写 B 读 A，正在显示的帧不会被写侧覆盖。</text>
+    <text x="906" y="372" font-size="11" fill="#6b7280">地址间隔 0x20_0000（2MB），用 AXI 地址 bit21 区分 A / B</text>
+    <text x="906" y="396" font-size="11" fill="#6b7280">突发上限 512B，远小于块大小，翻块只会发生在帧边界</text>
+  </g>
+
+  <!-- 乒乓控制器 -->
+  <g>
+    <rect x="430" y="340" width="380" height="300" rx="10" fill="#f3effb" stroke="#a690d8" stroke-width="1.5"/>
+    <text x="446" y="366" font-size="14" font-weight="bold" fill="#5b3fa8">乒乓控制器 · fifo_to_adapter</text>
+    <text x="446" y="392" font-size="12" fill="#374151">· w_buf：写块指针（0=A，1=B）</text>
+    <text x="446" y="414" font-size="12" fill="#374151">· r_buf：读块指针（复位=1 读 B，与写 A 错开）</text>
+    <text x="446" y="436" font-size="12" fill="#374151">· last_completed_buf：刚写完的块</text>
+    <text x="446" y="458" font-size="12" fill="#374151">· frame_ready：有未读的新帧</text>
+    <text x="446" y="480" font-size="12" fill="#374151">· frame_active：读侧启动锁存（首帧后常开）</text>
+    <text x="446" y="510" font-size="12" font-weight="bold" fill="#5b3fa8">切换规则</text>
+    <text x="446" y="534" font-size="12" fill="#374151">· camera_w_done → w_buf 翻转（立即，不停等）</text>
+    <text x="446" y="556" font-size="12" fill="#374151">· r_brust_complete &amp;&amp; frame_ready →</text>
+    <text x="462" y="576" font-size="12" fill="#374151">r_buf ← last_completed_buf</text>
+    <text x="446" y="604" font-size="11" fill="#6b7280">same_buf = frame_active &amp;&amp; (awaddr[21]==araddr[21])</text>
+    <text x="446" y="622" font-size="11" fill="#6b7280">仅接 ILA 观测，不参与控制</text>
+  </g>
+
+  <!-- 读主机 -->
+  <g>
+    <rect x="430" y="700" width="380" height="170" rx="10" fill="#eef5fc" stroke="#86aede" stroke-width="1.5"/>
+    <text x="446" y="726" font-size="14" font-weight="bold" fill="#2b5f9b">AXI4 读主机 · axi4_to_fifo</text>
+    <text x="446" y="754" font-size="12" fill="#374151">· 发起读突发，回填读 FIFO</text>
+    <text x="446" y="776" font-size="12" fill="#374151">· 基址 rd_base = r_buf ? 缓冲B : 缓冲A</text>
+    <text x="446" y="798" font-size="12" fill="#374151">· r_brust_complete 每读完一帧给一拍</text>
+    <text x="446" y="820" font-size="12" fill="#374151">· rd_enable 由 frame_active 锁存驱动</text>
+  </g>
+
+  <!-- 读 FIFO -> HDMI -->
+  <g>
+    <rect x="890" y="700" width="670" height="170" rx="10" fill="#eef7f0" stroke="#8fc49a" stroke-width="1.5"/>
+    <text x="906" y="726" font-size="14" font-weight="bold" fill="#2f7a3f">读 FIFO → VGA → HDMI</text>
+    <text x="906" y="754" font-size="12" fill="#374151">· rd_ddr3_fifo：128→16bit，100→74.25MHz 跨时钟域</text>
+    <text x="906" y="776" font-size="12" fill="#374151">· vga_ctrl：1280×720@60 行场时序，pix_data_req 作读使能</text>
+    <text x="906" y="798" font-size="12" fill="#374151">· HDMI（SiI9134）：RGB888 输出</text>
+    <text x="906" y="828" font-size="11" fill="#6b7280">显示侧按 60fps 读，与写侧 30fps 通过 DDR3 解耦</text>
+  </g>
+
+  <!-- 说明 -->
+  <g>
+    <rect x="40" y="700" width="320" height="180" rx="10" fill="#fdf9e6" stroke="#ddc46a" stroke-width="1.5"/>
+    <text x="56" y="726" font-size="13" font-weight="bold" fill="#8a6d1a">为什么 30 写 / 60 读不撕裂</text>
+    <text x="56" y="754" font-size="11.5" fill="#4b5563">· 写者 33.3ms 翻一次块（30fps）</text>
+    <text x="56" y="774" font-size="11.5" fill="#4b5563">· 读者受 frame_ready 门控，每块停留 33.3ms</text>
+    <text x="56" y="794" font-size="11.5" fill="#4b5563">· 相位锁定：同块窗口内写头 / 读尾</text>
+    <text x="56" y="814" font-size="11.5" fill="#4b5563">· DDR 串行访问不同地址，显示像素不被覆盖</text>
+    <text x="56" y="840" font-size="11.5" fill="#b45309">前提是 2:1 整数比；非整数比相位漂移 → 真撕裂</text>
+  </g>
+
+  <!-- 连线 -->
+  <line x1="360" y1="195" x2="424" y2="195" stroke="#4b5563" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="392" y="186" text-anchor="middle" font-size="10.5" fill="#4b5563">16bit RGB565</text>
+
+  <line x1="810" y1="195" x2="884" y2="195" stroke="#4b5563" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="847" y="186" text-anchor="middle" font-size="10.5" fill="#4b5563">AXI4 写</text>
+  <text x="847" y="214" text-anchor="middle" font-size="10.5" fill="#6b7280">512B/突发</text>
+
+  <polyline points="890,320 850,320 850,785 814,785" fill="none" stroke="#4b5563" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="858" y="548" font-size="10.5" fill="#4b5563">AXI4</text>
+  <text x="858" y="564" font-size="10.5" fill="#4b5563">读突发</text>
+  <text x="858" y="600" font-size="10.5" fill="#6b7280">按 rd_base</text>
+
+  <line x1="810" y1="785" x2="884" y2="785" stroke="#4b5563" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="847" y="776" text-anchor="middle" font-size="10.5" fill="#4b5563">128→16bit</text>
+
+  <!-- 控制器与主机之间的控制信号 -->
+  <line x1="610" y1="282" x2="610" y2="336" stroke="#b45309" stroke-width="1.4" stroke-dasharray="5,4" marker-end="url(#arw)"/>
+  <line x1="630" y1="336" x2="630" y2="282" stroke="#b45309" stroke-width="1.4" stroke-dasharray="5,4" marker-end="url(#arw)"/>
+  <text x="642" y="306" font-size="10" fill="#b45309">camera_w_done ↓</text>
+  <text x="642" y="322" font-size="10" fill="#b45309">wr_base / 切换脉冲 ↑</text>
+
+  <line x1="610" y1="642" x2="610" y2="696" stroke="#b45309" stroke-width="1.4" stroke-dasharray="5,4" marker-end="url(#arw)"/>
+  <line x1="630" y1="696" x2="630" y2="642" stroke="#b45309" stroke-width="1.4" stroke-dasharray="5,4" marker-end="url(#arw)"/>
+  <text x="642" y="664" font-size="10" fill="#b45309">rd_base / 切换脉冲 ↓</text>
+  <text x="642" y="680" font-size="10" fill="#b45309">r_brust_complete ↑</text>
+
+  <!-- 图例 -->
+  <g font-size="11" fill="#4b5563">
+    <rect x="430" y="916" width="16" height="16" rx="3" fill="#fdf4e9" stroke="#e3b077"/>
+    <text x="454" y="929">采集域</text>
+    <rect x="530" y="916" width="16" height="16" rx="3" fill="#eef5fc" stroke="#86aede"/>
+    <text x="554" y="929">写 / 读主机</text>
+    <rect x="660" y="916" width="16" height="16" rx="3" fill="#f3effb" stroke="#a690d8"/>
+    <text x="684" y="929">乒乓控制器</text>
+    <rect x="790" y="916" width="16" height="16" rx="3" fill="#eef7f0" stroke="#8fc49a"/>
+    <text x="814" y="929">帧缓存 / 显示</text>
+    <rect x="930" y="916" width="16" height="16" rx="3" fill="#fdf9e6" stroke="#ddc46a"/>
+    <text x="954" y="929">说明</text>
+    <line x1="1020" y1="924" x2="1050" y2="924" stroke="#b45309" stroke-width="1.4" stroke-dasharray="5,4"/>
+    <text x="1058" y="929">控制信号</text>
+  </g>
+</svg>

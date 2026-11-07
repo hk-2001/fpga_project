@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <column_width_setting>
+      <NameColumnWidth column_width="225"></NameColumnWidth>
+      <ValueColumnWidth column_width="140"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="191" />
+   <wvobject fp_name="/tb_system/ui_clk" type="logic">
+      <obj_property name="ElementShortName">ui_clk</obj_property>
+      <obj_property name="ObjectShortName">ui_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/wr_clk" type="logic">
+      <obj_property name="ElementShortName">wr_clk</obj_property>
+      <obj_property name="ObjectShortName">wr_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/rd_clk" type="logic">
+      <obj_property name="ElementShortName">rd_clk</obj_property>
+      <obj_property name="ObjectShortName">rd_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/wrfifo_rst" type="logic">
+      <obj_property name="ElementShortName">wrfifo_rst</obj_property>
+      <obj_property name="ObjectShortName">wrfifo_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/rdfifo_rst" type="logic">
+      <obj_property name="ElementShortName">rdfifo_rst</obj_property>
+      <obj_property name="ObjectShortName">rdfifo_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/fifo_full" type="logic">
+      <obj_property name="ElementShortName">fifo_full</obj_property>
+      <obj_property name="ObjectShortName">fifo_full</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/wr_data_count" type="array">
+      <obj_property name="ElementShortName">wr_data_count[10:0]</obj_property>
+      <obj_property name="ObjectShortName">wr_data_count[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/fifo_empty" type="logic">
+      <obj_property name="ElementShortName">fifo_empty</obj_property>
+      <obj_property name="ObjectShortName">fifo_empty</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/fifo_dout" type="array">
+      <obj_property name="ElementShortName">fifo_dout[15:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_dout[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/rd_data_count" type="array">
+      <obj_property name="ElementShortName">rd_data_count[10:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_data_count[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/rd_en" type="logic">
+      <obj_property name="ElementShortName">rd_en</obj_property>
+      <obj_property name="ObjectShortName">rd_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_awid" type="array">
+      <obj_property name="ElementShortName">m_axi_awid[3:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_awid[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_awlen" type="array">
+      <obj_property name="ElementShortName">m_axi_awlen[7:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_awlen[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_awsize" type="array">
+      <obj_property name="ElementShortName">m_axi_awsize[2:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_awsize[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_awburst" type="array">
+      <obj_property name="ElementShortName">m_axi_awburst[1:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_awburst[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_awlock" type="logic">
+      <obj_property name="ElementShortName">m_axi_awlock</obj_property>
+      <obj_property name="ObjectShortName">m_axi_awlock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_awcache" type="array">
+      <obj_property name="ElementShortName">m_axi_awcache[3:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_awcache[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_awprot" type="array">
+      <obj_property name="ElementShortName">m_axi_awprot[2:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_awprot[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_awqos" type="array">
+      <obj_property name="ElementShortName">m_axi_awqos[3:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_awqos[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_awregion" type="array">
+      <obj_property name="ElementShortName">m_axi_awregion[3:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_awregion[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_awvalid" type="logic">
+      <obj_property name="ElementShortName">m_axi_awvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axi_awvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_awready" type="logic">
+      <obj_property name="ElementShortName">m_axi_awready</obj_property>
+      <obj_property name="ObjectShortName">m_axi_awready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_wdata" type="array">
+      <obj_property name="ElementShortName">m_axi_wdata[127:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_wdata[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_wstrb" type="array">
+      <obj_property name="ElementShortName">m_axi_wstrb[15:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_wstrb[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_wlast" type="logic">
+      <obj_property name="ElementShortName">m_axi_wlast</obj_property>
+      <obj_property name="ObjectShortName">m_axi_wlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_wvalid" type="logic">
+      <obj_property name="ElementShortName">m_axi_wvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axi_wvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_wready" type="logic">
+      <obj_property name="ElementShortName">m_axi_wready</obj_property>
+      <obj_property name="ObjectShortName">m_axi_wready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_bid" type="array">
+      <obj_property name="ElementShortName">m_axi_bid[3:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_bid[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_bresp" type="array">
+      <obj_property name="ElementShortName">m_axi_bresp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_bresp[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_bvalid" type="logic">
+      <obj_property name="ElementShortName">m_axi_bvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axi_bvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_bready" type="logic">
+      <obj_property name="ElementShortName">m_axi_bready</obj_property>
+      <obj_property name="ObjectShortName">m_axi_bready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_arid" type="array">
+      <obj_property name="ElementShortName">m_axi_arid[3:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_arid[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_arlen" type="array">
+      <obj_property name="ElementShortName">m_axi_arlen[7:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_arlen[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_arsize" type="array">
+      <obj_property name="ElementShortName">m_axi_arsize[2:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_arsize[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_arburst" type="array">
+      <obj_property name="ElementShortName">m_axi_arburst[1:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_arburst[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_arlock" type="logic">
+      <obj_property name="ElementShortName">m_axi_arlock</obj_property>
+      <obj_property name="ObjectShortName">m_axi_arlock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_arcache" type="array">
+      <obj_property name="ElementShortName">m_axi_arcache[3:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_arcache[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_arprot" type="array">
+      <obj_property name="ElementShortName">m_axi_arprot[2:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_arprot[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_arqos" type="array">
+      <obj_property name="ElementShortName">m_axi_arqos[3:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_arqos[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_arregion" type="array">
+      <obj_property name="ElementShortName">m_axi_arregion[3:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_arregion[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_arvalid" type="logic">
+      <obj_property name="ElementShortName">m_axi_arvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axi_arvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_arready" type="logic">
+      <obj_property name="ElementShortName">m_axi_arready</obj_property>
+      <obj_property name="ObjectShortName">m_axi_arready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_rid" type="array">
+      <obj_property name="ElementShortName">m_axi_rid[3:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_rid[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_rdata" type="array">
+      <obj_property name="ElementShortName">m_axi_rdata[127:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_rdata[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_rresp" type="array">
+      <obj_property name="ElementShortName">m_axi_rresp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_rresp[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_rlast" type="logic">
+      <obj_property name="ElementShortName">m_axi_rlast</obj_property>
+      <obj_property name="ObjectShortName">m_axi_rlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_rvalid" type="logic">
+      <obj_property name="ElementShortName">m_axi_rvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axi_rvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_rready" type="logic">
+      <obj_property name="ElementShortName">m_axi_rready</obj_property>
+      <obj_property name="ObjectShortName">m_axi_rready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/cam_din" type="array">
+      <obj_property name="ElementShortName">cam_din[15:0]</obj_property>
+      <obj_property name="ObjectShortName">cam_din[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/cam_wr_en" type="logic">
+      <obj_property name="ElementShortName">cam_wr_en</obj_property>
+      <obj_property name="ObjectShortName">cam_wr_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/k" type="array">
+      <obj_property name="ElementShortName">k[31:0]</obj_property>
+      <obj_property name="ObjectShortName">k[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/wr_busy" type="logic">
+      <obj_property name="ElementShortName">wr_busy</obj_property>
+      <obj_property name="ObjectShortName">wr_busy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/wr_addr" type="array">
+      <obj_property name="ElementShortName">wr_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">wr_addr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/wr_beats" type="array">
+      <obj_property name="ElementShortName">wr_beats[7:0]</obj_property>
+      <obj_property name="ObjectShortName">wr_beats[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/bvalid_r" type="logic">
+      <obj_property name="ElementShortName">bvalid_r</obj_property>
+      <obj_property name="ObjectShortName">bvalid_r</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/rd_busy" type="logic">
+      <obj_property name="ElementShortName">rd_busy</obj_property>
+      <obj_property name="ObjectShortName">rd_busy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/rvalid_r" type="logic">
+      <obj_property name="ElementShortName">rvalid_r</obj_property>
+      <obj_property name="ObjectShortName">rvalid_r</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/rd_addr" type="array">
+      <obj_property name="ElementShortName">rd_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_addr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/rd_beats" type="array">
+      <obj_property name="ElementShortName">rd_beats[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_beats[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/rbeat" type="array">
+      <obj_property name="ElementShortName">rbeat[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rbeat[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/e_alt_w" type="array">
+      <obj_property name="ElementShortName">e_alt_w[31:0]</obj_property>
+      <obj_property name="ObjectShortName">e_alt_w[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/e_alt_r" type="array">
+      <obj_property name="ElementShortName">e_alt_r[31:0]</obj_property>
+      <obj_property name="ObjectShortName">e_alt_r[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/e_same" type="array">
+      <obj_property name="ElementShortName">e_same[31:0]</obj_property>
+      <obj_property name="ObjectShortName">e_same[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/e_x" type="array">
+      <obj_property name="ElementShortName">e_x[31:0]</obj_property>
+      <obj_property name="ObjectShortName">e_x[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/e_stuck" type="array">
+      <obj_property name="ElementShortName">e_stuck[31:0]</obj_property>
+      <obj_property name="ObjectShortName">e_stuck[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/frame_no" type="array">
+      <obj_property name="ElementShortName">frame_no[31:0]</obj_property>
+      <obj_property name="ObjectShortName">frame_no[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/started" type="logic">
+      <obj_property name="ElementShortName">started</obj_property>
+      <obj_property name="ObjectShortName">started</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/last_wsel" type="logic">
+      <obj_property name="ElementShortName">last_wsel</obj_property>
+      <obj_property name="ObjectShortName">last_wsel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/have_wsel" type="logic">
+      <obj_property name="ElementShortName">have_wsel</obj_property>
+      <obj_property name="ObjectShortName">have_wsel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/last_rsel" type="logic">
+      <obj_property name="ElementShortName">last_rsel</obj_property>
+      <obj_property name="ObjectShortName">last_rsel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/have_rsel" type="logic">
+      <obj_property name="ElementShortName">have_rsel</obj_property>
+      <obj_property name="ObjectShortName">have_rsel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/rbc_gap" type="array">
+      <obj_property name="ElementShortName">rbc_gap[2:0]</obj_property>
+      <obj_property name="ObjectShortName">rbc_gap[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/last_aw" type="array">
+      <obj_property name="ElementShortName">last_aw[31:0]</obj_property>
+      <obj_property name="ObjectShortName">last_aw[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/have_last_aw" type="logic">
+      <obj_property name="ElementShortName">have_last_aw</obj_property>
+      <obj_property name="ObjectShortName">have_last_aw</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/IMG_W" type="array">
+      <obj_property name="ElementShortName">IMG_W[31:0]</obj_property>
+      <obj_property name="ObjectShortName">IMG_W[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/IMG_H" type="array">
+      <obj_property name="ElementShortName">IMG_H[31:0]</obj_property>
+      <obj_property name="ObjectShortName">IMG_H[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/A_BASE" type="array">
+      <obj_property name="ElementShortName">A_BASE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">A_BASE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/B_BASE" type="array">
+      <obj_property name="ElementShortName">B_BASE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">B_BASE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/NFRAME" type="array">
+      <obj_property name="ElementShortName">NFRAME[31:0]</obj_property>
+      <obj_property name="ObjectShortName">NFRAME[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/SEL_BIT" type="array">
+      <obj_property name="ElementShortName">SEL_BIT[31:0]</obj_property>
+      <obj_property name="ObjectShortName">SEL_BIT[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/ui_clk" type="logic">
+      <obj_property name="ElementShortName">ui_clk</obj_property>
+      <obj_property name="ObjectShortName">ui_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/wr_clk" type="logic">
+      <obj_property name="ElementShortName">wr_clk</obj_property>
+      <obj_property name="ObjectShortName">wr_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/din" type="array">
+      <obj_property name="ElementShortName">din[15:0]</obj_property>
+      <obj_property name="ObjectShortName">din[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/wr_en" type="logic">
+      <obj_property name="ElementShortName">wr_en</obj_property>
+      <obj_property name="ObjectShortName">wr_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/wrfifo_rst" type="logic">
+      <obj_property name="ElementShortName">wrfifo_rst</obj_property>
+      <obj_property name="ObjectShortName">wrfifo_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/full" type="logic">
+      <obj_property name="ElementShortName">full</obj_property>
+      <obj_property name="ObjectShortName">full</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/wr_data_count" type="array">
+      <obj_property name="ElementShortName">wr_data_count[10:0]</obj_property>
+      <obj_property name="ObjectShortName">wr_data_count[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/rd_clk" type="logic">
+      <obj_property name="ElementShortName">rd_clk</obj_property>
+      <obj_property name="ObjectShortName">rd_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/rdfifo_rst" type="logic">
+      <obj_property name="ElementShortName">rdfifo_rst</obj_property>
+      <obj_property name="ObjectShortName">rdfifo_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/rd_en" type="logic">
+      <obj_property name="ElementShortName">rd_en</obj_property>
+      <obj_property name="ObjectShortName">rd_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/dout" type="array">
+      <obj_property name="ElementShortName">dout[15:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/empty" type="logic">
+      <obj_property name="ElementShortName">empty</obj_property>
+      <obj_property name="ObjectShortName">empty</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/rd_data_count" type="array">
+      <obj_property name="ElementShortName">rd_data_count[10:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_data_count[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_awid" type="array">
+      <obj_property name="ElementShortName">m_axi_awid[3:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_awid[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_awaddr" type="array">
+      <obj_property name="ElementShortName">m_axi_awaddr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_awaddr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_awlen" type="array">
+      <obj_property name="ElementShortName">m_axi_awlen[7:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_awlen[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_awsize" type="array">
+      <obj_property name="ElementShortName">m_axi_awsize[2:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_awsize[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_awburst" type="array">
+      <obj_property name="ElementShortName">m_axi_awburst[1:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_awburst[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_awlock" type="array">
+      <obj_property name="ElementShortName">m_axi_awlock[0:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_awlock[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_awcache" type="array">
+      <obj_property name="ElementShortName">m_axi_awcache[3:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_awcache[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_awprot" type="array">
+      <obj_property name="ElementShortName">m_axi_awprot[2:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_awprot[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_awqos" type="array">
+      <obj_property name="ElementShortName">m_axi_awqos[3:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_awqos[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_awregion" type="array">
+      <obj_property name="ElementShortName">m_axi_awregion[3:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_awregion[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_awvalid" type="logic">
+      <obj_property name="ElementShortName">m_axi_awvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axi_awvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_awready" type="logic">
+      <obj_property name="ElementShortName">m_axi_awready</obj_property>
+      <obj_property name="ObjectShortName">m_axi_awready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_wdata" type="array">
+      <obj_property name="ElementShortName">m_axi_wdata[127:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_wdata[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_wstrb" type="array">
+      <obj_property name="ElementShortName">m_axi_wstrb[15:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_wstrb[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_wlast" type="logic">
+      <obj_property name="ElementShortName">m_axi_wlast</obj_property>
+      <obj_property name="ObjectShortName">m_axi_wlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_wvalid" type="logic">
+      <obj_property name="ElementShortName">m_axi_wvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axi_wvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_wready" type="logic">
+      <obj_property name="ElementShortName">m_axi_wready</obj_property>
+      <obj_property name="ObjectShortName">m_axi_wready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_bid" type="array">
+      <obj_property name="ElementShortName">m_axi_bid[3:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_bid[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_bresp" type="array">
+      <obj_property name="ElementShortName">m_axi_bresp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_bresp[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_bvalid" type="logic">
+      <obj_property name="ElementShortName">m_axi_bvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axi_bvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_bready" type="logic">
+      <obj_property name="ElementShortName">m_axi_bready</obj_property>
+      <obj_property name="ObjectShortName">m_axi_bready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/camera_w_done" type="logic">
+      <obj_property name="ElementShortName">camera_w_done</obj_property>
+      <obj_property name="ObjectShortName">camera_w_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_arid" type="array">
+      <obj_property name="ElementShortName">m_axi_arid[3:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_arid[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_araddr" type="array">
+      <obj_property name="ElementShortName">m_axi_araddr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_araddr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_arlen" type="array">
+      <obj_property name="ElementShortName">m_axi_arlen[7:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_arlen[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_arsize" type="array">
+      <obj_property name="ElementShortName">m_axi_arsize[2:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_arsize[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_arburst" type="array">
+      <obj_property name="ElementShortName">m_axi_arburst[1:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_arburst[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_arlock" type="array">
+      <obj_property name="ElementShortName">m_axi_arlock[0:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_arlock[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_arcache" type="array">
+      <obj_property name="ElementShortName">m_axi_arcache[3:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_arcache[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_arprot" type="array">
+      <obj_property name="ElementShortName">m_axi_arprot[2:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_arprot[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_arqos" type="array">
+      <obj_property name="ElementShortName">m_axi_arqos[3:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_arqos[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_arregion" type="array">
+      <obj_property name="ElementShortName">m_axi_arregion[3:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_arregion[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_arvalid" type="logic">
+      <obj_property name="ElementShortName">m_axi_arvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axi_arvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_arready" type="logic">
+      <obj_property name="ElementShortName">m_axi_arready</obj_property>
+      <obj_property name="ObjectShortName">m_axi_arready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_rid" type="array">
+      <obj_property name="ElementShortName">m_axi_rid[3:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_rid[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_rdata" type="array">
+      <obj_property name="ElementShortName">m_axi_rdata[127:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_rdata[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_rresp" type="array">
+      <obj_property name="ElementShortName">m_axi_rresp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_rresp[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_rlast" type="logic">
+      <obj_property name="ElementShortName">m_axi_rlast</obj_property>
+      <obj_property name="ObjectShortName">m_axi_rlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_rvalid" type="logic">
+      <obj_property name="ElementShortName">m_axi_rvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axi_rvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/m_axi_rready" type="logic">
+      <obj_property name="ElementShortName">m_axi_rready</obj_property>
+      <obj_property name="ObjectShortName">m_axi_rready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/dout_inst" type="array">
+      <obj_property name="ElementShortName">dout_inst[127:0]</obj_property>
+      <obj_property name="ObjectShortName">dout_inst[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/empty_inst" type="logic">
+      <obj_property name="ElementShortName">empty_inst</obj_property>
+      <obj_property name="ObjectShortName">empty_inst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/rd_data_count_inst" type="array">
+      <obj_property name="ElementShortName">rd_data_count_inst[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_data_count_inst[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/rd_rst_busy_inst0" type="logic">
+      <obj_property name="ElementShortName">rd_rst_busy_inst0</obj_property>
+      <obj_property name="ObjectShortName">rd_rst_busy_inst0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/wr_rst_busy_inst0" type="logic">
+      <obj_property name="ElementShortName">wr_rst_busy_inst0</obj_property>
+      <obj_property name="ObjectShortName">wr_rst_busy_inst0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/rd_en_inst" type="logic">
+      <obj_property name="ElementShortName">rd_en_inst</obj_property>
+      <obj_property name="ObjectShortName">rd_en_inst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/din_inst" type="array">
+      <obj_property name="ElementShortName">din_inst[127:0]</obj_property>
+      <obj_property name="ObjectShortName">din_inst[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/full_inst" type="logic">
+      <obj_property name="ElementShortName">full_inst</obj_property>
+      <obj_property name="ObjectShortName">full_inst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/wr_data_count_inst" type="array">
+      <obj_property name="ElementShortName">wr_data_count_inst[7:0]</obj_property>
+      <obj_property name="ObjectShortName">wr_data_count_inst[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/wr_rst_busy_inst1" type="logic">
+      <obj_property name="ElementShortName">wr_rst_busy_inst1</obj_property>
+      <obj_property name="ObjectShortName">wr_rst_busy_inst1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/rd_rst_busy_inst1" type="logic">
+      <obj_property name="ElementShortName">rd_rst_busy_inst1</obj_property>
+      <obj_property name="ObjectShortName">rd_rst_busy_inst1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/wr_en_inst" type="logic">
+      <obj_property name="ElementShortName">wr_en_inst</obj_property>
+      <obj_property name="ObjectShortName">wr_en_inst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_awaddr" type="array">
+      <obj_property name="ElementShortName">m_axi_awaddr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_awaddr[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/m_axi_araddr" type="array">
+      <obj_property name="ElementShortName">m_axi_araddr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axi_araddr[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/w_buf" type="logic">
+      <obj_property name="ElementShortName">w_buf</obj_property>
+      <obj_property name="ObjectShortName">w_buf</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/r_buf" type="logic">
+      <obj_property name="ElementShortName">r_buf</obj_property>
+      <obj_property name="ObjectShortName">r_buf</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/last_completed_buf" type="logic">
+      <obj_property name="ElementShortName">last_completed_buf</obj_property>
+      <obj_property name="ObjectShortName">last_completed_buf</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/frame_ready" type="logic">
+      <obj_property name="ElementShortName">frame_ready</obj_property>
+      <obj_property name="ObjectShortName">frame_ready</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/frame_active" type="logic">
+      <obj_property name="ElementShortName">frame_active</obj_property>
+      <obj_property name="ObjectShortName">frame_active</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/w_addr_switch_pulse" type="logic">
+      <obj_property name="ElementShortName">w_addr_switch_pulse</obj_property>
+      <obj_property name="ObjectShortName">w_addr_switch_pulse</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/r_addr_switch_pulse" type="logic">
+      <obj_property name="ElementShortName">r_addr_switch_pulse</obj_property>
+      <obj_property name="ObjectShortName">r_addr_switch_pulse</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/r_brust_complete" type="logic">
+      <obj_property name="ElementShortName">r_brust_complete</obj_property>
+      <obj_property name="ObjectShortName">r_brust_complete</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/rd_enable" type="logic">
+      <obj_property name="ElementShortName">rd_enable</obj_property>
+      <obj_property name="ObjectShortName">rd_enable</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/wr_base" type="array">
+      <obj_property name="ElementShortName">wr_base[31:0]</obj_property>
+      <obj_property name="ObjectShortName">wr_base[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/rd_base" type="array">
+      <obj_property name="ElementShortName">rd_base[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_base[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/wsel" type="logic">
+      <obj_property name="ElementShortName">wsel</obj_property>
+      <obj_property name="ObjectShortName">wsel</obj_property>
+      <obj_property name="CustomSignalColor">#FF0000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/rsel" type="logic">
+      <obj_property name="ElementShortName">rsel</obj_property>
+      <obj_property name="ObjectShortName">rsel</obj_property>
+      <obj_property name="CustomSignalColor">#FF0000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/camera_w_done" type="logic">
+      <obj_property name="ElementShortName">camera_w_done</obj_property>
+      <obj_property name="ObjectShortName">camera_w_done</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/FIFO_DW" type="array">
+      <obj_property name="ElementShortName">FIFO_DW[31:0]</obj_property>
+      <obj_property name="ObjectShortName">FIFO_DW[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/FIFO_ADDR_WIDTH" type="array">
+      <obj_property name="ElementShortName">FIFO_ADDR_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">FIFO_ADDR_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/BUF_A_BEGIN" type="array">
+      <obj_property name="ElementShortName">BUF_A_BEGIN[31:0]</obj_property>
+      <obj_property name="ObjectShortName">BUF_A_BEGIN[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/BUF_B_BEGIN" type="array">
+      <obj_property name="ElementShortName">BUF_B_BEGIN[31:0]</obj_property>
+      <obj_property name="ObjectShortName">BUF_B_BEGIN[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/AXI_DATA_WIDTH" type="array">
+      <obj_property name="ElementShortName">AXI_DATA_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">AXI_DATA_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/AXI_ADDR_WIDTH" type="array">
+      <obj_property name="ElementShortName">AXI_ADDR_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">AXI_ADDR_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/AXI_ID_WIDTH" type="array">
+      <obj_property name="ElementShortName">AXI_ID_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">AXI_ID_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/CAMERA_AXI_ID" type="array">
+      <obj_property name="ElementShortName">CAMERA_AXI_ID[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CAMERA_AXI_ID[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/AXI_BURST_LEN" type="array">
+      <obj_property name="ElementShortName">AXI_BURST_LEN[31:0]</obj_property>
+      <obj_property name="ObjectShortName">AXI_BURST_LEN[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/AXI_ARBURST_INCR" type="array">
+      <obj_property name="ElementShortName">AXI_ARBURST_INCR[1:0]</obj_property>
+      <obj_property name="ObjectShortName">AXI_ARBURST_INCR[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/AXI_ARLOCK_NORMAL" type="logic">
+      <obj_property name="ElementShortName">AXI_ARLOCK_NORMAL</obj_property>
+      <obj_property name="ObjectShortName">AXI_ARLOCK_NORMAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/AXI_ARCACHE_DEVICE_NON_BUF" type="array">
+      <obj_property name="ElementShortName">AXI_ARCACHE_DEVICE_NON_BUF[3:0]</obj_property>
+      <obj_property name="ObjectShortName">AXI_ARCACHE_DEVICE_NON_BUF[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/AXI_ARPROT_UNPRIV_SECURE" type="array">
+      <obj_property name="ElementShortName">AXI_ARPROT_UNPRIV_SECURE[2:0]</obj_property>
+      <obj_property name="ObjectShortName">AXI_ARPROT_UNPRIV_SECURE[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/AXI_ARQOS_DEFAULT" type="array">
+      <obj_property name="ElementShortName">AXI_ARQOS_DEFAULT[3:0]</obj_property>
+      <obj_property name="ObjectShortName">AXI_ARQOS_DEFAULT[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/AXI_ARREGION_DEFAULT" type="array">
+      <obj_property name="ElementShortName">AXI_ARREGION_DEFAULT[3:0]</obj_property>
+      <obj_property name="ObjectShortName">AXI_ARREGION_DEFAULT[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/AXI_RRESP_OKAY" type="array">
+      <obj_property name="ElementShortName">AXI_RRESP_OKAY[1:0]</obj_property>
+      <obj_property name="ObjectShortName">AXI_RRESP_OKAY[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/AXI_AWBURST_INCR" type="array">
+      <obj_property name="ElementShortName">AXI_AWBURST_INCR[1:0]</obj_property>
+      <obj_property name="ObjectShortName">AXI_AWBURST_INCR[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/AXI_AWLOCK_NORMAL" type="logic">
+      <obj_property name="ElementShortName">AXI_AWLOCK_NORMAL</obj_property>
+      <obj_property name="ObjectShortName">AXI_AWLOCK_NORMAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/AXI_AWCACHE_DEVICE_NON_BUF" type="array">
+      <obj_property name="ElementShortName">AXI_AWCACHE_DEVICE_NON_BUF[3:0]</obj_property>
+      <obj_property name="ObjectShortName">AXI_AWCACHE_DEVICE_NON_BUF[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/AXI_AWPROT_UNPRIV_SECURE" type="array">
+      <obj_property name="ElementShortName">AXI_AWPROT_UNPRIV_SECURE[2:0]</obj_property>
+      <obj_property name="ObjectShortName">AXI_AWPROT_UNPRIV_SECURE[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/AXI_AWQOS_DEFAULT" type="array">
+      <obj_property name="ElementShortName">AXI_AWQOS_DEFAULT[3:0]</obj_property>
+      <obj_property name="ObjectShortName">AXI_AWQOS_DEFAULT[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/AXI_AWREGION_DEFAULT" type="array">
+      <obj_property name="ElementShortName">AXI_AWREGION_DEFAULT[3:0]</obj_property>
+      <obj_property name="ObjectShortName">AXI_AWREGION_DEFAULT[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/AXI_BRESP_OKAY" type="array">
+      <obj_property name="ElementShortName">AXI_BRESP_OKAY[1:0]</obj_property>
+      <obj_property name="ObjectShortName">AXI_BRESP_OKAY[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/AXI_WSTRB_ALL_VALID" type="logic">
+      <obj_property name="ElementShortName">AXI_WSTRB_ALL_VALID</obj_property>
+      <obj_property name="ObjectShortName">AXI_WSTRB_ALL_VALID</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/AXI_RESET_POLARITY" type="logic">
+      <obj_property name="ElementShortName">AXI_RESET_POLARITY</obj_property>
+      <obj_property name="ObjectShortName">AXI_RESET_POLARITY</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/IMAGE_WIDTH" type="array">
+      <obj_property name="ElementShortName">IMAGE_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">IMAGE_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_system/u_dut/IMAGE_HEIGHT" type="array">
+      <obj_property name="ElementShortName">IMAGE_HEIGHT[31:0]</obj_property>
+      <obj_property name="ObjectShortName">IMAGE_HEIGHT[31:0]</obj_property>
+   </wvobject>
+</wave_config>

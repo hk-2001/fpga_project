@@ -1,0 +1,33 @@
+# 文本：统一用 LF 换行，避免 Windows / Linux 之间 diff 噪音
+*.v    text eol=lf
+*.sv   text eol=lf
+*.vh   text eol=lf
+*.vhd  text eol=lf
+*.xdc  text eol=lf
+*.tcl  text eol=lf
+*.md   text eol=lf
+*.prj  text eol=lf
+*.xml  text eol=lf
+
+# 二进制：不要做换行转换 / 不要 diff
+*.bit  binary
+*.bin  binary
+*.mcs  binary
+*.prm  binary
+*.rbt  binary
+*.ltx  binary
+*.dcp  binary
+*.wdb  binary
+*.wcfg binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.mp4  binary
+*.webp binary
+*.svg  text
+*.xlsx binary
+*.xls  binary
+*.vsdx binary
+*.pdf  binary
+*.zip  binary

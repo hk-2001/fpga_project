@@ -1,0 +1,103 @@
+###############################################################################
+# Vivado 工程 Git 忽略规则
+# 生成物一律不入库，只保留：RTL / XDC / 仿真源码 / 文档 / 素材
+###############################################################################
+
+# ---------- Vivado 工作目录 ----------
+.Xil/
+.cache/
+.runs/
+.sim/
+.hw/
+.ip_user_files/
+.bds/
+.gen/
+.xpr.bak/
+*.cache/
+*.hw/
+*.runs/
+*.sim/
+
+# ---------- 日志 / 临时 / 备份 ----------
+*.jou
+*.log
+*.str
+*.tmp
+*.pb
+*.bak
+*.xml.bak
+*.dmp
+*.lock
+*.os
+hs_err*.log
+webtalk*.jou
+webtalk*.log
+vivado.jou
+vivado.log
+vivado_*.backup.jou
+vivado_*.backup.log
+vivado_*.str
+
+# ---------- 波形 / 仿真数据库 ----------
+*.wdb
+*.wcfg
+*.vvp
+*.vcd
+*.tcl.bak
+
+# ---------- 比特流 / 调试网表 ----------
+# 想让别人直接下板烧录，就把 *.bit 和 *.bin 注释掉
+*.bit
+*.bin
+*.rbt
+*.ltx
+*.mcs
+*.prm
+
+# ---------- 工程文件 ----------
+# .xpr 里写死了生成它的机器上的绝对路径，换台电脑就打不开，
+# 统一用 create_project.tcl 重建，所以不入库
+*.xpr
+build/
+
+# ---------- IP 生成物 ----------
+# 本工程零 IP 文件依赖，ip/ 目录暂时为空；以下规则为后续加入 IP 预留
+ip/*/hdl/
+ip/*/sim/
+ip/*/simulation/
+ip/*/synth/
+ip/*/doc/
+ip/*/docs/
+ip/*/example_design/
+ip/*/*.v
+ip/*/*.vh
+ip/*/*.vhd
+ip/*/*.vhdl
+ip/*/*.veo
+ip/*/*.vho
+ip/*/*.xdc
+ip/*/*.dcp
+ip/*/*.xml
+ip/*/*_sim_netlist.v
+ip/*/*_sim_netlist.vhdl
+ip/*/*_stub.v
+ip/*/*_stub.vhdl
+ip/*/xil_txt.*
+
+# 例外：IP 配置文件必须入库，否则重建不出来
+!ip/**/*.xci
+!ip/**/*.prj
+
+# ---------- 本地综合 / 实现产物 ----------
+synth/
+usage_statistics_webtalk.html
+usage_statistics_webtalk.xml
+
+# ---------- Visio / Office 临时文件 ----------
+~\$*
+~*.tmp
+
+# ---------- 系统 ----------
+.DS_Store
+Thumbs.db
+desktop.ini

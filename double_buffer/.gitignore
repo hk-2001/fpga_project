@@ -1,0 +1,114 @@
+###############################################################################
+# Vivado 工程 Git 忽略规则
+# 生成物一律不入库，只保留：.xpr / .xci / .prj / RTL / XDC / 文档
+###############################################################################
+
+# ---------- Vivado 工作目录 ----------
+.Xil/
+.cache/
+.runs/
+.sim/
+.hw/
+.ip_user_files/
+.bds/
+.gen/
+.xpr.bak/
+*.cache/
+*.hw/
+*.runs/
+*.sim/
+
+# ---------- 日志 / 临时 / 备份 ----------
+*.jou
+*.log
+*.str
+*.tmp
+*.pb
+*.bak
+*.xml.bak
+*.dmp
+*.lock
+*.os
+hs_err*.log
+webtalk*.jou
+webtalk*.log
+vivado.jou
+vivado.log
+vivado_*.backup.jou
+vivado_*.backup.log
+vivado_*.str
+
+# ---------- 波形 / 仿真数据库 ----------
+*.wdb
+*.wcfg
+*.tcl.bak
+
+# 例外：sim/ 下随仓库发布的系统级仿真波形（体积小，便于直接看波形）
+!sim/*.wdb
+!sim/*.wcfg
+
+# ---------- 比特流 / 调试网表 ----------
+# 想让别人直接下板烧录，就把 *.bit 和 *.bin 注释掉
+*.bit
+*.bin
+*.rbt
+*.ltx
+*.mcs
+*.prm
+
+# ---------- 工程文件 ----------
+# .xpr 里写死了生成它的机器上的绝对路径，换台电脑就打不开，
+# 统一用 create_project.tcl 重建，所以不入库
+*.xpr
+build/
+
+# ---------- IP 生成物 ----------
+# Vivado 生成 IP 后会在 ip/<名称>/ 下吐出 hdl、仿真模型、
+# 综合网表等一堆文件，这些都能靠 .xci 重新生成，不必入库
+ip/*/hdl/
+ip/*/sim/
+ip/*/simulation/
+ip/*/synth/
+ip/*/doc/
+ip/*/docs/
+ip/*/example_design/
+ip/*/*.v
+ip/*/*.vh
+ip/*/*.vhd
+ip/*/*.vhdl
+ip/*/*.veo
+ip/*/*.vho
+ip/*/*.xdc
+ip/*/*.dcp
+ip/*/*.xml
+ip/*/*_sim_netlist.v
+ip/*/*_sim_netlist.vhdl
+ip/*/*_stub.v
+ip/*/*_stub.vhdl
+ip/*/xil_txt.*
+
+# MIG 的目录比一般 IP 多套了一层
+ip/*/*/user_design/
+ip/*/*/example_design/
+ip/*/*/docs/
+ip/*/*/*.veo
+ip/*/*/*.xdc
+
+# 例外：IP 配置文件必须入库，否则重建不出来
+!ip/**/*.xci
+!ip/**/*.prj
+
+# ---------- 第三方版权文件 ----------
+# Micron DDR3 仿真模型版权归 Micron Technology, Inc. 所有，
+# 其许可不允许二次分发，即便本地放入了也不入库。
+sim/ddr3_model.sv
+sim/ddr3_model_parameters.vh
+
+# ---------- Visio / Office 临时文件 ----------
+~\$*
+~*.tmp
+
+# ---------- 系统 ----------
+.DS_Store
+Thumbs.db
+desktop.ini
